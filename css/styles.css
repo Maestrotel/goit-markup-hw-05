@@ -482,6 +482,40 @@ background-color: var(--button-color);
 }
 
 
+/* ---------------- */
+.prod-link {
+  color: var(primary-text-color);
+}
+
+.prod-thumb {
+  position: relative;
+  overflow: hidden;
+}
+
+.prod-overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  transform: translateY(100%);
+  transition: transform 250ms linear;
+
+  background-color: #02897aA1;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--secondary-text-color);
+  padding: 43px 24px;
+}
+
+.prod-link:hover .prod-overlay,
+.prod-link:focus .prod-overlay {
+  transform: translateY(0%);
+}
+/* ---------------- */
+
+
+
 
 
 /* footer */
