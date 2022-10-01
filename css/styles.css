@@ -5,6 +5,7 @@
   --title-text-color: #212121;
   --accent-color: #2196F3;
   --accent-button-color:#188CE8;
+  --accent-card-color: rgba(33, 150, 243, 0.9);
   --logo-color: #000000;
   --button-color:#F5F4FA;
   --social-icons-color: #AFB1B8;
@@ -452,6 +453,7 @@ background-color: var(--button-color);
   font-size: 16px;
   line-height: 1.88;
   letter-spacing: 0.03em;
+  color: var(--primary-text-color);
 }
 
 .prod-grid {
@@ -481,12 +483,6 @@ background-color: var(--button-color);
   display: block;
 }
 
-
-/* ---------------- */
-.prod-link {
-  color: var(primary-text-color);
-}
-
 .prod-thumb {
   position: relative;
   overflow: hidden;
@@ -499,20 +495,20 @@ background-color: var(--button-color);
   top: 0;
   left: 0;
   transform: translateY(100%);
-  transition: transform 250ms linear;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-  background-color: #02897aA1;
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--secondary-text-color);
-  padding: 43px 24px;
+  background-color: var(--accent-card-color);
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+  color: var(--primary-background-color);
+  padding: 63px 24px 91px;
 }
 
 .prod-link:hover .prod-overlay,
 .prod-link:focus .prod-overlay {
   transform: translateY(0%);
 }
-/* ---------------- */
 
 
 
