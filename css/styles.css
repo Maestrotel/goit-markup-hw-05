@@ -11,6 +11,7 @@
   --social-icons-color: #AFB1B8;
   --portfolio-line: #ECECEC;
   --portfolio-border: #EEEEEE;
+  --backdrop-menu-color: rgba(0, 0, 0, 0.2);
   --footer-comments-color: rgba(255, 255, 255, 0.6);
   --transition-dur-func: 250ms cubic-bezier(0.4, 0, 0.2, 1);
   --overlay-gadgets-color: rgba(47, 48, 58, 0.8);
@@ -146,6 +147,7 @@ ol {
   line-height: 1.14;
   letter-spacing: 0.02em;
   transition: color var(--transition-dur-func);
+  position: relative;
 }
 
 .nav-pages .link:hover,
@@ -157,6 +159,17 @@ ol {
   color: var(--accent-color);
 }
 
+.current::after {
+  margin-top: 27px;
+  position: absolute;
+  display: block;
+  content: '';
+  width: 100%;
+  height: 4px;
+  background-color: var(--accent-color);
+  border-radius: 2px;
+}
+ 
 .nav-item:not(:last-child) {
   margin-right: 50px;
 }
@@ -176,8 +189,6 @@ ol {
   margin-right: 30px;
 }
 
-
-
 .contacts-link {
   display: flex;
   align-items: center;
@@ -188,7 +199,6 @@ ol {
   letter-spacing: 0.02em;
   transition: color var(--transition-dur-func);
 }
-
 
 .contacts-link:hover,
 .contacts-link:focus {
@@ -305,7 +315,6 @@ ol {
   justify-content: space-between;
 }
 
-
 .gadgets-img {
   display: block;
 }
@@ -408,7 +417,6 @@ background-color: var(--button-color);
   fill: var(--primary-background-color);
 }
 
-
 .customers-card {
   display: flex;
   justify-content: center;
@@ -452,7 +460,7 @@ background-color: var(--button-color);
   margin-bottom: 50px;
 }
 
-.btn-line .list{
+.btn-list {
   background-color: var(--button-color);
   color: var(--title-text-color);
   cursor: pointer;
@@ -468,11 +476,11 @@ background-color: var(--button-color);
   text-align: center;
   letter-spacing: 0.03em;
   box-shadow: 0;
-  transition: background-color var(--transition-dur-func), color var(--transition-dur-func);
+  transition: var(--transition-dur-func);
 }
 
-.btn-line .list:hover,
-.btn-line .list:focus {
+.btn-list:hover,
+.btn-list:focus {
   background-color: var(--accent-color);
   color: var(--primary-background-color);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
@@ -634,6 +642,61 @@ background-color: var(--button-color);
 
 
 
+/* backdrop */
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  background-color: var(--backdrop-menu-color);
+  transition: opacity 500ms linear, visibility 500ms linear;
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+
+/* modal */
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 528px;
+  height: 581px;
+  background-color: var(--primary-background-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0;
+  transition: border-color var(--transition-dur-func);
+}
+
+.modal-close-btn:hover,
+.modal-close-btn:focus {
+  cursor: pointer;
+}
 
 
 /* 

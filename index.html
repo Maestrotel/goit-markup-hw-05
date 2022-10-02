@@ -50,7 +50,7 @@
       <div class="solutions">
         <section class="solutions-section container section">
           <h1 class="solutions-title">EFFECTIVE SOLUTIONS FOR YOUR BUSINESS</h1>
-          <button type="button" class="btn-service">Request our service</button>
+          <button type="button" class="btn-service" data-modal-open>Request our service</button>
         </section>
       </div>
       <section class="items section">
@@ -442,5 +442,15 @@
         </div>
       </div>
     </footer>
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        <button type="button" class="modal-close-btn" data-modal-close>
+          <svg class="modal-close-btn-icon" width="18" height="18">
+            <use href="./images/sprite.svg#icon-close"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
