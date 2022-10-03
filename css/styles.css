@@ -208,6 +208,7 @@ ol {
 .contacts-img {
   margin-right: 10px;
   fill: var(--primary-text-color);
+  transition: fill var(--transition-dur-func);
 }
 
 .contacts-link:hover .contacts-img,
@@ -430,7 +431,7 @@ background-color: var(--button-color);
   border: 1px solid var(--social-icons-color);
   border-radius: 4px;
   background-color: var(--primary-background-color);
-  transition: background-color var(--transition-dur-func);
+  transition: border var(--transition-dur-func);
 }
 
 .customers-list-link:hover,
